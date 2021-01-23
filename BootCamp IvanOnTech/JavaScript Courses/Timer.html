@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <title>Jquery exercises - Bootcamp week 4 </title>
+  <head>
+    <meta charset="utf-8">
+    <script type=”text/javascript”></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+    </style>
+  </head>
+  <body>
+    
+    <script>
+      function doNumberTimes(toDo, number){
+        for(var counter=0;counter<number;counter++){
+          toDo();
+        };
+      };
+      
+      function randomFunction(){
+        document.write("Here is the sentence " + counter +".");
+      };
+
+      doNumberTimes(randomFunction,10);
+    </script>
+    
+  </body>
+</html>

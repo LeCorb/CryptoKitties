@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <title>Jquery exercises - Bootcamp week 4 </title>
+  <head>
+    <meta charset="utf-8">
+    <script type=”text/javascript”></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+      h1 {
+        color: #474140;
+        margin: 5px;
+        cursor: pointer;
+      } 
+      h1:hover {
+        background: #BF5F42;
+      }
+      body {  background-color: #9DD183; }
+      
+
+
+      </style>
+  </head>
+  <body>
+     
+
+    <script>
+      var counter;
+      function doNumberTimes(toDo, number){
+        for(counter=0;counter<number;counter++){
+          toDo();
+        }
+      }
+      
+      function randomFunction(){
+        document.write("<h1>Here is the sentence " + (counter+1) +" .</h1>");
+      }
+      
+      doNumberTimes(randomFunction,10);
+
+    </script>
+ </body>
+</html>

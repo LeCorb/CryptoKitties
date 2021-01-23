@@ -1,0 +1,33 @@
+<html>
+  <title>Jquery exercises - Bootcamp week 4 </title>
+  <head>
+    <script type=”text/javascript”></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    
+
+    <h1>Hello world</h1>
+    <h1 class=itemTwo>Je suis Nono</h1>
+
+    <h2>le petit robot</h2>
+    <h2 class=itemTwo>cadeau d'Ulysse</h2>
+
+    <p>pour télémak son fils.</p>
+
+
+    <button>Click here</button>
+
+    <script>
+     // here we have jQuery functionnality
+    
+     //$(".itemTwo").hide();
+
+     $(document).ready(function(){
+        $("button").click(function(){
+          $("h1").hide();
+        });
+      });
+    </script>      
+  </body>
+</html> 

@@ -1,0 +1,89 @@
+<html lang="en">
+  <title>Dynamic List, Bootcamp week 4 </title>
+  <head>
+    <meta charset="utf-8">
+    <script type=”text/javascript”></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
+    <style>
+     p{margin:0px;}
+     body {display: grid;
+      grid-template-columns: 20% 20% 20% 20% 20%;
+      grid-template-rows: 50% 50%;
+      display:flex; align-items: center;flex-direction:column;}
+    #trump{}
+    </style>
+  </head>
+  <body style="background-color: #A47759
+">
+  <div class="jumbotron col-12 border-bottom-0" style="background-color: #fb961f">
+    <h1>My Favorite Fruits</h1>
+    <p>I think about the fruits I love, and I write them down in a list.</p>
+  </div>
+  <div id="trump" class="container col-12" style="display:flex;flex-direction:column; align-items:center; ">
+  <div class="container border-bottom-0 rounded-top col-5" style="background-color:#343a40";>
+    <p class="text-white text-center bg-dark">Please type some fruits, one at a time.</p>
+    <div class="input-group mb">
+      <input id="fruitNameInput" class="form-control text-justify border border-warning" aria-label="Some fruits" aria-describedby="basic-addon2" placeholder="Which fruit are you thinking of ?" type="text">
+      
+    </div>
+    <div class="input-group mb">
+      <input id="fruitColorInput" class="form-control text-justify border border-warning" aria-label="Some fruits" aria-describedby="basic-addon2" placeholder="Which color is it ?" type="text">
+      
+      
+    </div>
+    <div class="input-group mb">
+      <input id="fruitWeightInput" class="form-control text-justify border border-warning" aria-label="Some fruits" aria-describedby="basic-addon2" placeholder="What weight is it ?" type="text">
+      <div class="input-group-append">
+      <button id="recordButton" class="btn btn-outline-light border border-warning" type="button">Record your taste</button>
+    </div>
+    </div>
+  </div>
+  <div class="container rounded-bottom col-5 border-top-0" style="background-color: #343a40 ;">
+    <p class="bg-dark">
+      <ol id="fruitList" class="text-white text-center">
+      </ol>
+  <p class="text-white text-center bg-dark">This is the end of your list of favorite fruits</p>
+  </div></div>
+    <script>
+      //var fruits = ["Apple", "Orange", "Banana", "Pineapple"];
+      //var fruits =    
+        //[{name:"Apple",color:"Green",weight:10}];
+        //{name:"Orange",color:"Orange", weight:13},
+        //{name: "Banana",color:"Yellow",weight:20}];
+
+        var fruits=[];
+      
+      var fruitName;
+      var fruitColor;
+      var fruitWeight;
+      var fruitObject = {name: fruitName, color: fruitColor, weight:parseInt(fruitWeight)};
+
+      function redrawList(){
+        var list = $("#fruitList");
+        list.html("");
+
+        $.each(fruits,function(index,value){
+          $("<li/>").text(value.name + ", "+ value.color +", " + value.weight ).appendTo(list);
+
+        });
+      }
+      redrawList();
+
+      $("#recordButton").click(function(){
+        fruitName = $("#fruitNameInput").val(); 
+        fruitColor = $("#fruitColorInput").val();
+        fruitWeight = $("#fruitWeightInput").val(); 
+        
+        fruits.push({name:fruitName, color:fruitColor, weight:parseInt(fruitWeight)});
+
+        //fruits.push(fruitObject);
+          console.log(fruits);
+
+        redrawList(); 
+      });
+    </script>
+ </body>
+</html>

@@ -1,0 +1,77 @@
+<html lang="en">
+  <title>Reversing An Array 2, Bootcamp week 4 </title>
+  <head>
+    <meta charset="utf-8">
+    <script type=”text/javascript”></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
+    <style>
+      ::placeholder { color: #a42627;
+        opacity: 1; 
+      }
+     p{margin:0px;}
+     body {display: grid;
+      grid-template-columns: 20% 20% 20% 20% 20%;
+      grid-template-rows: 50% 50%;
+      display:flex; align-items: center;flex-direction:column;}
+    #trump{}
+    </style>
+  </head>
+  <body style="background-color: #6cbb47">
+
+  <div class="jumbotron col-12 border-bottom-0" style="color:#6cbb47; background-color: #d71884; border-radius: 0px;">
+    <h1>Reversing An Array 2</h1>
+    <p>Add values to an Array, one at a time, and reverse it.</p>
+  </div>
+  <div id="trump" class="container col-12" style="display:flex;flex-direction:column; align-items:center; ">
+  <div class="container border-bottom-0 rounded-top col-5" style="background-color:#67ce9b";>
+    <p  style= "padding: 15px" class="text-white text-center">Please enter the first value and so on, then hit the reverse button</p>
+    <div class="input-group mb">
+      <input id="valueInput"style="border-radius: 0px;"class="form-control text-justify border border-black-50" aria-label="Step" aria-describedby="basic-addon2" placeholder="enter a value" type="text">
+      <div class="input-group-append">
+      <button id="addValue" type="button" style="border-radius: 0px;" class="btn btn-outline-light border border-black-50">add to the array</button>
+    </div>
+    </div>
+  </div>
+  <div class="container rounded-bottom col-5 border-top-0" style="padding: 15px; display:flex; align-items: center; flex-direction:column; background-color: #67ce9b;">
+    <h3 id="result" style="background-color: #67ce9b display:flex;";class="text-white text-center">
+      </h3>
+    <button id="reverseIt" type="button" class="btn btn-outline-light">reverse</button>
+  </div>
+    <script>
+      var arrayValue = [];
+      var a;
+      $(document).ready(function(){
+        $("#addValue").click(function(){
+          a = document.getElementById("valueInput").value;
+          arrayValue.push(a);
+          console.log (a);
+          document.getElementById('valueInput').value = '';
+        });
+            
+        $("#reverseIt").click(function(){
+          let b = reverseArrayInPlace(arrayValue);
+          console.log (b)  
+          document.getElementById("result").innerHTML = b;
+        });
+
+        function reverseArrayInPlace(array) {
+         for (var i = 0; i < Math.floor(array.length / 2); i++) {
+            var old = array[i];
+            array[i] = array[array.length - 1 - i];
+            array[array.length - 1 - i] = old;
+         }
+         return array;
+        }
+      });
+      /*var arrayValue = [1, 2, 3, 4, 5];
+      reverseArrayInPlace(arrayValue);
+      console.log(arrayValue);*/
+              // → [5, 4, 3, 2, 1]    
+
+
+    </script>
+ </body>
+</html>

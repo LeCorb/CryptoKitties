@@ -1,0 +1,55 @@
+// #130912, #3e1c33, #602749, #b14623, #f6921d
+$w: 5em;
+$h: 6px;
+$p: 50%;
+$t: 1s;
+
+body {
+	background: #130912;
+}
+
+.seg {
+	display: flex;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: $w;
+	height: $h;
+	transform: translate(-50%, -50%) rotate(calc(var(--k) / var(--n) * 1turn))
+		translate(calc(#{$h}/ var(--tan) + 0.5 *#{$w}));
+
+	&::before,
+	&::after {
+		--i: 0;
+		--sgn-i: calc(1 - 2 * var(--i));
+		flex: 1;
+		margin: 0 1px;
+		border-radius: 0.5 * $h;
+		transform-origin: calc(var(--i) * 100%);
+		background: linear-gradient(
+			calc(var(--sgn-i) * -90deg),
+			#3e1c33,
+			#602749,
+			#b14623,
+			#f6921d
+		);
+		animation: zip $t ease-out calc((var(--k) / var(--n) - 1) * 2 *#{$t})
+			infinite alternate;
+		content: "";
+	}
+
+	&::after {
+		--i: 1;
+	}
+}
+
+@keyframes zip {
+	0%,
+	#{$p} {
+		transform: none;
+	}
+	#{.5*($p + 100%)},
+	100% {
+		transform: rotate(calc(var(--sgn-i) * 68deg));
+	}
+}

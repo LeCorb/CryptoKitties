@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <title>Api's - Bootcamp Week 4 Day 4</title>
+  <head>
+    <meta charset="utf-8">
+    <script type=”text/javascript”></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <style>
+      h1 {
+        color: #BAE0C1;
+        margin: 5px;
+        cursor: pointer;
+      } 
+      h1:hover {
+        background: #EE5A54;
+      }
+      body {  background-color: #1798AC; display:flex; align-items:center; flex-direction: column; }
+      </style>
+  </head>
+  <body>
+    <p>Last 24hours, Ethereum market capitalization has change by </p>
+    
+
+    <h1 id="24hmcc"></h1><br>
+
+    
+    
+
+  <script>
+      let BASE_URL = "https://api.coingecko.com/api/v3"
+      let ENDPOINT = "/coins/markets?vs_currency=chf&ids=ethereum&market_cap_change_24h;"
+            
+      let ethMarketChange = BASE_URL + ENDPOINT
+    
+    fetch("https://httpbin.org/post",{
+      method:"post",
+      body:JSON.stringify({secret1: "secret data",
+                sensitive: "sensitive"})  
+    })  
+    .then(res => {
+      res.json().then(data => {
+        console.log(data); 
+      })
+
+    fetch(ethMarketChange)
+    .then(res => {
+      res.json().then(data => {
+        console.log(data);
+        $("#24hmcc").html(data);
+      })
+    })
+    .catch(err => {
+      $("#24hmcc").html (err);
+    })
+    });
+
+  </script>
+ </body>
+</html>

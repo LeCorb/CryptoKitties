@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <title>try.html- Bootcamp Week 4 Day 4</title>
+  <head>
+    <meta charset="utf-8">
+    <script type=”text/javascript”></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <style>
+      h1 {
+        color: #BAE0C1;
+        margin: 5px;
+        cursor: pointer;
+      } 
+      h1:hover {
+        background: #EE5A54;
+      }
+      body {  background-color: #1798AC; display:flex; align-items:center; flex-direction: column; }
+      </style>
+  </head>
+  <body>
+    <p style ="background-color: #A3856C" class="list-group-flush">
+              <table id=myTable style="background-image: linear-gradient(
+                  to right,#d24d54, #e5bc8b, #caa77d, #a3856c, #584d4f");>
+                <thead>
+                  <tr>
+      <th>Fav
+      <th>Rank#
+      <th>Image
+      <th>Name
+      <th>Symbol
+      <th>Current Price
+      <th>1h
+      <th>24h
+      <th>7d
+      <th>Volume 24h
+      <th>Capitalisation
+      <th>7days  
+                </thead>
+                <tbody>
+            <tr><div id="rowTarget"></div>
+                    
+      
+                </tbody>
+              </table> 
+            </p>
+    
+    
+
+  <script>
+    var i=0
+    var url = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&sparkline=true&price_change_percentage=1h%2C24h%2C7d";
+    
+
+    fetch(url)
+    .then(function(res){
+      res.json().then(function(data){
+        let myImage= new Image(50, 50)
+        myImage.src= (data[0].image);
+        document.table.appendChild(myImage)
+        
+        console.log(
+                    image,
+                    data[i].name,
+                    data[i].symbol,
+                    data[i].current_price + " $US", 
+                    data[i].price_change_percentage_1h_in_currency +" %", 
+                    data[i].price_change_percentage_7d_in_currency +" %", 
+                    data[i].price_change_percentage_24h_in_currency +" %", 
+                    data[i].total_volume + " $US", 
+                    data[i].market_cap + " $US", 
+                    data[i].sparkline_in_7d);
+        console.log(data[1]);
+        //$(document.getElementById("rowTarget")).innerHTML = rowContent
+        })
+      })
+    
+  </script>
+ </body>
+</html>

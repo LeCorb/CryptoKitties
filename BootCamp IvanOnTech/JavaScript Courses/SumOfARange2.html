@@ -1,0 +1,109 @@
+<html lang="en">
+  <title>SumOfARange2, Bootcamp week 4 </title>
+  <head>
+    <meta charset="utf-8">
+    <script type=”text/javascript”></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
+    <style>
+      ::placeholder { color: #ca1ad9;
+        opacity: 1; 
+      }
+     p{margin:0px;}
+     body {display: grid;
+      grid-template-columns: 20% 20% 20% 20% 20%;
+      grid-template-rows: 50% 50%;
+      display:flex; align-items: center;flex-direction:column;}
+    #trump{}
+    </style>
+  </head>
+  <body style="background-color: #ca1ad9
+">
+  <div class="jumbotron col-12 border-bottom-0" style="color: #ca1ad9; background-color: #7d3647; border-radius: 0px;">
+    <h1>SumOfARange2</h1>
+    <p>Sum of the integers between two numbers at X intervals</p>
+  </div>
+  <div id="trump" class="container col-12" style="display:flex;flex-direction:column; align-items:center; ">
+  <div class="container border-bottom-0 rounded-top col-5" style="background-color:#1d2908";>
+    <p class="text-white text-center">Please enter the low, the high targets and the "step" to apply</p>
+    <div class="input-group mb">
+      <input id="startInput"style="border-radius: 0px;" class="form-control text-justify border border-black-50" aria-label="Low target" aria-describedby="basic-addon2" placeholder="what is your low target" type="text">
+      
+    </div>
+    <div class="input-group mb">
+      <input id="endInput"style="border-radius: 0px;"class="form-control text-justify border border-black-50" aria-label="High target" aria-describedby="basic-addon2" placeholder="what is your high target" type="text">
+      
+      
+    </div>
+    <div class="input-group mb">
+      <input id="stepInput"style="border-radius: 0px;"class="form-control text-justify border border-black-50" aria-label="Step" aria-describedby="basic-addon2" placeholder="What is the Step to Apply ?" type="text">
+      <div class="input-group-append">
+      <button type="button" style="border-radius: 0px;" class="btn btn-outline-light border border-black-50">alert result</button>
+    </div>
+    </div>
+  </div>
+  <div class="container rounded-bottom col-5 border-top-0" style="background-color: #1d2908 ;">
+    
+  <p style="background-color: #1d2908 ; class="text-white text-center">sum(range(low,high,<em>step</em>))</p>
+  </div></div>
+    <script>
+      function range(start, end, step){
+        if(start < end && step < 0) {
+         [start, end] = [end, start]
+        }
+        if (step == null) step = 1;
+        var array = [];
+      
+        if (step > 0) {
+          for (var i = start; i <= end; i += step)
+            array.push(i);
+        } else {
+          for (var i = start; i >= end; i += step)
+            array.push(i);
+        }
+        return array;
+      }
+      function sum(input){
+             
+       if (toString.call(input) !== "[object Array]")
+          return false;
+            
+            var total =  0;
+            for(var i=0;i<input.length;i++)
+              {                  
+                if(isNaN(input[i])){
+                continue;
+                 }
+                  total += Number(input[i]);
+               }
+             return total;
+      };
+      
+        
+
+
+      $(document).ready(function(){
+        $("button").click(function(){
+          let a = parseInt(document.getElementById("startInput").value);
+          let b = parseInt(document.getElementById("endInput").value);
+          let c = parseInt(document.getElementById("stepInput").value);
+          alert(sum(range(a,b,c)));
+        });
+      }); 
+
+/*// → sum = 26
+console.log (sum(range(5, 2, -1)));
+// → sum = 14
+console.log (sum(range(1, 10, -1)));
+// →  sum = 55
+console.log (range(1, 10, 2));
+// → [1, 3, 5, 7, 9] 
+console.log(range(5, 2, -1));
+// → [5, 4, 3, 2] 
+console.log (range(1, 10, -1));
+// → [10, 9, 8, 7, 6, 5, 4, 3, 2, 1] */
+    </script>
+ </body>
+</html>

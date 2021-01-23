@@ -1,0 +1,28 @@
+<html>
+  <title>Javascript exercises - Bootcamp chapter 3</title>
+  <head>
+    <script type=”text/javascript”></script>
+  </head>
+  <body>
+    <script>
+      
+/*     Write a function called "isOldEnoughToDrink".
+
+Given a number, in this case an age, "isOldEnoughToDrink" returns whether a person of this given age is old enough to legally drink in the United States.
+
+Notes:* The legal drinking age in the United States is 21.
+
+var output = isOldEnoughToDrink(22);
+console.log(output); // --> true
+*/
+        function isOldEnoughToDrink(age) {
+          if ((age-21) >=0){
+            document.write (age + " is all good to drink all Alcohol!")}
+          else {
+            document.write(age + " isn't merely old enought to drink Beer !<br> Go to mummy,<br> Kid !")}; 
+        }
+        let myage = prompt("HOY, What's your age, young lad ?");
+        isOldEnoughToDrink (myage);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<html lang="en">
+  <title>Reversing an Array, Bootcamp week 4 </title>
+  <head>
+    <meta charset="utf-8">
+    <script type=”text/javascript”></script>
+    <style>
+      
+    </style>
+  </head>
+  <body>
+    
+    <script>
+      function reverseArrayInPlace(array) {
+         for (var i = 0; i < Math.floor(array.length / 2); i++) {
+            var old = array[i];
+            array[i] = array[array.length - 1 - i];
+            array[array.length - 1 - i] = old;
+         }
+         return array;
+}
+        
+      var arrayValue = [1, 2, 3, 4, 5];
+      reverseArrayInPlace(arrayValue);
+      console.log(arrayValue);
+              // → [5, 4, 3, 2, 1]    
+    </script>
+ </body>
+</html>

@@ -1,0 +1,25 @@
+<html>
+  <title>Javascript exercises - Bootcamp chapter 3</title>
+  <head>
+    <script type=”text/javascript”></script>
+  </head>
+  <body>
+    <script>
+    
+    let char = prompt ("What is your prefered letter ?");
+    let word = prompt ("What is your word ?");
+    
+    function countChar(str, char) {
+      let count = 0;
+      for (let i = 0; i < str.length; i++) {
+        if (str.charAt(i) === char) { 
+        count++;
+        }
+      }
+      return (count);
+    }
+    var result = countChar(word, char);
+    document.write ("There are " + result + char +"s in the word " + word);
+    </script>      
+  </body>
+</html> 

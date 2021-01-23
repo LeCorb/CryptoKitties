@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <title>Api's - Bootcamp Week 4 Day 4</title>
+  <head>
+    <meta charset="utf-8">
+    <script type=”text/javascript”></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <style>
+      h1 {
+        color: #BAE0C1;
+        margin: 5px;
+        cursor: pointer;
+      } 
+      h1:hover {
+        background: #EE5A54;
+      }
+      body {  background-color: #e5bc8b; display:flex; align-items:center; flex-direction: column; }
+      </style>
+  </head>
+  <body>
+    <div class="container col-12" style="background-color: #213429;">
+
+    <h1 id="24hChange"></h1>
+  	</div>
+  	<div class="container col-12" style="background-color: #e5bc8b"></div>
+  <script>
+    var mybr = document.createElement('br');
+		document.body.appendChild(mybr);
+    
+    var image = "<img src=https://assets.coingecko.com/coins/images/279/large/ethereum.png?1595348880/>";
+
+    var market = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=ethereum"
+
+    console.log (market);
+    
+
+		fetch(market)
+    .then(res => {
+     	res.json().then(data => {				
+      	console.log(data[0].market_cap_change_24h);
+    		if(data[0].market_cap_change_24h >=0){
+    			document.getElementById("24hChange").style.color ="green";
+    			$("#24hChange").html(image + "'s market cap has grown by "+ data[0].market_cap_change_24h + " $ in the past 24 hours.");
+    		}else{
+    			document.getElementById("24hChange").style.color ="red";
+    			$("#24hChange").html(image +"'s market cap has schrink by " + data[0].market_cap_change_24h + " $ in the past 24 hours.")}
+    		})});
+    console.log (image)
+  </script>
+  </body>									
+</html>											

@@ -1,0 +1,1 @@
+Raspberry Pi OS (previously called Raspbian) is our official operating system for all models of the Raspberry Pi : https://www.raspberrypi.org/downloads/.

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <title>Api's - Bootcamp Week 4 Day 4</title>
+  <head>
+    <meta charset="utf-8">
+    <script type=”text/javascript”></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <style>
+      h1 {
+        color: #BAE0C1;
+        margin: 5px;
+        cursor: pointer;
+      } 
+      h1:hover {
+        background: #EE5A54;
+      }
+      body {  background-color: #1798AC; display:flex; align-items:center; flex-direction: column; }
+      </style>
+  </head>
+  <body>
+    
+    <img src="https://logos-download.com/wp-content/uploads/2017/05/Bitcoin_logo-700x155.png"/>
+    
+    <p> 's price is </p>
+
+    <h1 id="price"></h1><br>
+
+    <img src="https://freepngimg.com/thumb/dollar/7-2-dollar-png-clipart-thumb.png"/>
+    
+
+  <script>
+    var url = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd";
+    fetch(url)
+    .then(function(res){
+      res.json().then(function(data){
+        console.log(data.bitcoin.usd);
+        $("#price").html(data.bitcoin.usd);
+      })
+
+    })
+  </script>
+ </body>
+</html>

@@ -1,0 +1,100 @@
+body {
+    background-color: #9D1831;
+    font: 1em Helvetica;
+  }
+  .navbar-expand-sm {
+    background-color:#ef831d;
+  }
+
+
+  #container {
+    width: 840px;
+    padding:30px;  
+    margin-top: 1.75em;
+  }
+  
+  .whysign {
+    float: left;
+    background-color: rgb(245, 234, 79);
+    width: 480px;
+    height: 355px;
+    border-radius: 0 8px 8px 0;
+    padding-top: 20px;
+    padding-right: 20px;
+    text-align: center;
+    margin: 0 auto;
+  }
+  
+  .signup {
+    float: left;
+    width: 300px;
+    padding: 30px 20px;
+    background-color:rgb(245, 234, 79);
+    text-align: center;
+    border-radius: 8px 0 0 8px;
+    margin: 0 auto;
+  }
+  
+  [type=text] {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    border: 0;
+    border-bottom: 1px solid rgba(0,0,0,.2);
+    height: 45px;
+    line-height: 45px;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    color: rgba(0,0,0,.4);
+    border-radius: 2px;
+    padding-left: 5px;
+  }
+  
+  [type=submit] {
+    margin-top: 25px;
+    width: 60%;
+    border: 0;
+    background-color: #62ac78;
+    border-radius: 5px;
+    height: 50px;
+    color: white;
+    font-weight: 400;
+    font-size: 1em;
+  
+  }
+  
+  [type='text']:focus {
+    outline: none;
+    border-color: #62ac78;
+  }
+  
+  h1 {
+    color: rgba(0,0,0,.7);
+    font-weight: 900;
+    font-size: 2.5em;
+  }
+  
+  p {
+    color: rgba(0,0,0,.6);
+    font-size: 2em;
+    margin: 50px 0 50px 0;
+  }
+  
+  span {
+    font-size: 1em;
+    background-color: #503F34;
+    padding: 2px 5px;
+    color: #f5ea4f;
+    border-radius: 2px;
+    box-shadow: 4px 4px 4px rgba(255, 204, 0.6);
+    margin: 8px;
+  }
+  
+  span:hover {
+    color: #53CACE;
+  }
+  
+  p:nth-of-type(2) {
+    font-size: 1em;
+  }
+

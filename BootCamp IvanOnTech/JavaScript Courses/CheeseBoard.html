@@ -1,0 +1,35 @@
+<html>
+  <title>Javascript exercises - Bootcamp chapter 3</title>
+  <head>
+    <script type=”text/javascript”></script>
+  </head>
+  <body>
+    <script>
+      //Create a chessboard
+      //write a string that produces an 8x8 grid
+      //pass the string to the screen
+      //separate lines with <br> character.
+      //each position of the grid will either be a space or a "#" 
+      //define a variable size = 8
+      //write the program so it changes for any size
+      let size = 20;
+      let hole = " ";
+
+      for (let y = 0; y <= (size/2)-1; y++){
+        for (let x = 0; x < size; x++){
+          if ((x+y) % 2 == 0){
+            // " "
+            hole += "#";
+            
+          } else {
+            //"#"
+            hole += " ";
+
+          } 
+        }
+        hole += "<br>";
+      } 
+      document.write (hole); 
+    </script>
+  </body>
+</html>

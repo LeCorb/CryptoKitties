@@ -1,0 +1,31 @@
+<html>
+  <title>Javascript exercises - Bootcamp chapter 3</title>
+  <head>
+    <script type=”text/javascript”></script>
+  </head>
+  <body>
+    <script>
+      
+/*Write a function called "isGreaterThan".
+
+Given 2 numbers, "isGreaterThan" returns whether num2 is greater than num1.
+
+var output = isGreaterThan(11, 10);
+console.log(output); // --> false
+*/
+      
+
+      function isGreaterThan(num1,num2) {
+        if (num1 < num2) {
+          document.write("Right, Number 2 is greater than Number 1");
+        } else {
+            document.write("NOooo, Number 2 is not greater than number 1");
+          } 
+      }  
+      let mynum1 = prompt ("Please type Number 1");
+      let mynum2 = prompt ("Please type Number 2");
+      isGreaterThan (mynum1,mynum2);
+    
+    </script>
+  </body>
+</html>
